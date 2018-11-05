@@ -1,6 +1,16 @@
 package src;
 
 public class FilePartReader {
+
+    public void setup () {
+        String filePath;
+        Integer fromLine;
+        Integer toLine;
+
+        if (toLine < fromLine || fromLine < 1) {
+            throw new IllegalArgumentException();
+        }
+    }
 }
 
 /*
