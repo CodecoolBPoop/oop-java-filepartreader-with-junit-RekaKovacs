@@ -1,11 +1,17 @@
-package src;
+package src.com.codecool;
 
 public class FilePartReader {
+    String filePath;
+    Integer fromLine;
+    Integer toLine;
+
+    public FilePartReader() {
+        filePath = "blablabla";
+        fromLine = 3;
+        toLine = 2;
+    }
 
     public void setup () {
-        String filePath;
-        Integer fromLine;
-        Integer toLine;
 
         if (toLine < fromLine || fromLine < 1) {
             throw new IllegalArgumentException();
