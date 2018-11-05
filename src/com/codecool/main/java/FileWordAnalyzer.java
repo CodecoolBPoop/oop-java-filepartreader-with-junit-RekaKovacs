@@ -1,4 +1,4 @@
-package src.com.codecool;
+package src.com.codecool.main.java;
 
 public class FileWordAnalyzer {
 
