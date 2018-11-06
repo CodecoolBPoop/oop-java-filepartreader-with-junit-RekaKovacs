@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class FilePartReader {
+
     private String filePath;
     private Integer fromLine;
     private Integer toLine;
@@ -48,6 +49,7 @@ public class FilePartReader {
         String s;
         StringBuilder sb = new StringBuilder();
         in = new BufferedReader(new FileReader(filePath));
+
         while ((s = in.readLine()) != null)
                 sb.append(s + "\n");
         return sb.toString();
@@ -60,7 +62,6 @@ public class FilePartReader {
         Also, if fromLine is 1 and toLine is 1 also, we will read only the very first line.
      */
     public String readLines () throws IOException {
-
         String allLines = this.read();
         Scanner scanner = new Scanner(allLines);
         StringBuilder sb = new StringBuilder();
