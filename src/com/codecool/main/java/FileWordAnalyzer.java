@@ -1,7 +1,10 @@
 package src.com.codecool.main.java;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class FileWordAnalyzer {
     ArrayList<String> wordsByABCList = new ArrayList();
@@ -17,7 +20,14 @@ public class FileWordAnalyzer {
         calls FilePartReader.readLines ()
         returns the words ordered by alphabetically as an ArrayList
      */
-    public ArrayList wordsByABC () {
+    public ArrayList wordsByABC (FilePartReader filePartReader) throws IOException {
+        String text = filePartReader.readLines();
+        String[] words;
+        words = Pattern.compile("\\s+").split(text);
+        for (String word : words) {
+            wordsByABCList.add(word);
+        }
+        Collections.sort(wordsByABCList);
         return wordsByABCList;
     }
 }
